@@ -1,0 +1,27 @@
+model:
+  num_cl: 512
+  cl_emb_channels: 128
+
+  temp_num_layers: [1, 1]
+  temp_kernel_sizes: [2, 3]
+  temp_in_residual_channels: 128
+  temp_out_residual_channels: 128
+  temp_out_skip_channels: 128
+
+  spat_in_channels: 128
+  spat_out_channels: 128
+  spat_kernel_size: 3
+  spat_num_layers: 3
+  ga_kernel_sizes: [2, 3]
+optimizer:
+  classpath: torch.optim.AdamW
+  kwargs:
+    lr: 0.01
+lr_scheduler:
+  classpath: torch.optim.lr_scheduler.ExponentialLR
+  torch_kwargs:
+    gamma: 0.95
+  lightning_kwargs:
+    interval: epoch
+    monitor: v_rmsse
+    frequency: 5

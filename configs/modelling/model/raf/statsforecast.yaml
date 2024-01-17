@@ -1,0 +1,4 @@
+model:
+  classpath: statsforecast.models.CrostonSBA
+  kwargs: 
+    alias: "sba"

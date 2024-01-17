@@ -1,0 +1,9 @@
+data_loading:
+  preprocessed_ts_data_path: ../data/carparts/preprocessed/ts.npy
+
+data_prep:
+  scaler: 1d_scaler
+  split: [0.8823529411764706, 0.11764705882352941, 0]
+  lookback_period: 6
+  batch_size: 4
+  num_workers: 4

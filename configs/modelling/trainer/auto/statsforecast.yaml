@@ -1,0 +1,20 @@
+callbacks:
+  early_stopping:
+    classpath: lightning.pytorch.callbacks.EarlyStopping
+    kwargs:
+      monitor: v_0_5_rmsse
+      patience: 10
+      mode: min
+  model_checkpoint:
+    classpath: lightning.pytorch.callbacks.ModelCheckpoint
+    kwargs:
+      dirpath: checkpoint/train/icgnn
+      filename: "{epoch}-{v_0_5_rmsse:.3f}"
+      mode: min
+      save_top_k: 5
+      save_weights_only: false
+      monitor: v_0_5_rmsse
+#callbacks gakepake
+logger:
+  kwargs:
+    save_dir: logs/train

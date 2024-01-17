@@ -1,0 +1,9 @@
+data_loading:
+  preprocessed_ts_data_path: ../data/auto/preprocessed/ts.npy
+
+data_prep:
+  scaler: 1d_scaler
+  split: [0.75, 0.25, 0]
+  lookback_period: 6
+  batch_size: 4
+  num_workers: 4

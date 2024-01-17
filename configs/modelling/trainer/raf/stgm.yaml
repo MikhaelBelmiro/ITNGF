@@ -1,0 +1,27 @@
+max_epochs: 100
+accelerator: gpu
+devices: -1
+callbacks:
+  early_stopping:
+    classpath: lightning.pytorch.callbacks.EarlyStopping
+    kwargs:
+      monitor: v_rmsse
+      patience: 15
+      mode: min
+  model_checkpoint:
+    classpath: lightning.pytorch.callbacks.ModelCheckpoint
+    kwargs:
+      dirpath: checkpoint/train/stgm
+      filename: "{epoch}-{v_rmsse:.3f}"
+      mode: min
+      save_top_k: 5
+      save_weights_only: false
+      monitor: v_rmsse
+
+logger:
+  classpath: lightning.pytorch.loggers.csv_logs.CSVLogger
+  kwargs:
+    version: null
+    save_dir: logs/train
+    name: stgm
+    flush_logs_every_n_steps: 10

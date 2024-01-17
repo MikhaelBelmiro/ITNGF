@@ -1,0 +1,9 @@
+data_loading:
+  preprocessed_ts_data_path: ../data/raf/preprocessed/ts.npy
+
+data_prep:
+  scaler: 2d_scaler
+  split: [0.9285714285714286, 0.07142857142857142, 0]
+  lookback_period: 6
+  batch_size: 2
+  num_workers: 2

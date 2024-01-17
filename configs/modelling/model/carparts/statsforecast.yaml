@@ -1,0 +1,6 @@
+model:
+  classpath: statsforecast.models.TSB
+  kwargs: 
+    alias: "tsb"
+    alpha_p: 0.4
+    alpha_d: 0.4
